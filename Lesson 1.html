@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function tempConverter() {
+            let Tc;
+            do {
+                Tc = prompt("Введите температуру в градусах по Цельсию");
+            } while (isNaN(Tc) == true);
+            let Tf = (9 / 5) * Tc + 32;
+            alert("В Фаренгейтах будет: " + Tf);
+            return Tf;
+        }
+
+        function copyName() {
+            let name, admin;
+            name = "Василий";
+            admin = name;
+            return admin;
+        }
+        tempConverter();
+        console.log(copyName());
+        /*
+        1. Два числа 10 складываются, потом превращаются в текст и объединяются со строкой 10.
+        2. 10 превращается в текст и объединяется со строкой 10, потом 10 превращается в текст и объединяется со строкой 1010.
+        3. Два числа 10 складываются, знак перед строкой 10 превращает строку в число, всё складывается в 30.
+        4. Минус превращает пустую строку в ноль, деление на - 0 даёт минус бесконечность.
+        5. Так как у строки 2,5 запятая, она не станет числом, поэтому выводится NaN.
+        */
+        console.log(10 + 10 + "10");
+        console.log(10 + "10" + 10);
+        console.log(10 + 10 + +"10");
+        console.log(10 / -"0");
+        console.log(10 / +"2,5");
+    </script>
+</body>
+
+</html>
