@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function task_1() {
+            let a = 1, b = 1, c, d;
+            c = ++a;
+            alert(c); // Сначала к 1 в а добавляется 1 через инкремент, потом к с присваивается 2 от а
+
+            d = b++;
+            alert(d) // Сначала к d присваивается 1 от b, потом инкремент увеличивает на 1 b
+
+            с = 2 + ++a;
+            alert(c) // Сначала инкеремент увеличится а с 2 до 3, затем прибавится 2 и 5 присвоится к с
+
+            d = 2 + b++;
+            alert(d); // Сначала 2 из b прибавится к 2, потом 4 присвоится к d, затем инкремент увеличит b на 1
+        }
+
+        function task_2() {
+            let a = 2;
+            let x = 1 + (a *= 2); // Сначала 2 из а умножится на 2, потом 1 прибавится к 4, и 5 присвоится к х
+        }
+
+        function task_3(a, b) {
+            if (a >= 0 && b >= 0) {
+                return a - b;
+            }
+            else if (a < 0 && b < 0) {
+                return a * b;
+            }
+            else if ((a >= 0 && b < 0) || (a < 0 && b >= 0)) {
+                return a + b;
+            }
+        }
+        function sum(a, b) {
+            return a + b;
+        }
+        function diffrence(a, b) {
+            return a - b;
+        }
+        function product(a, b) {
+            return a * b;
+        }
+        function quotient(a, b) {
+            return a / b;
+        }
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case "+":
+                    return sum(arg1, arg2);
+                case "-":
+                    return diffrence(arg1, arg2);
+                case "*":
+                    return product(arg1, arg2);
+                case "/":
+                    return quotient(arg1, arg2);
+                default:
+                    alert("You have to enter one of these symbols: +, -, *, /");
+            }
+        }
+        console.log(task_3(3, -5));
+        console.log(mathOperation(4, 2, '+'));
+    </script>
+</body>
