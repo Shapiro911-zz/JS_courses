@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function task1() {
+            const size = 11;
+            for (let i = 0; i < size; i++) {
+                if (i == 0) {
+                    console.log(i + " - это ноль");
+                }
+                else if (i % 2 != 0) {
+                    console.log(i + " - это нечетное число");
+                }
+                else {
+                    console.log(i + " - это четное число");
+                }
+            }
+        }
+        task1();
+        const post = {
+            author: "John",
+            postId: 23,
+            comments: [
+                {
+                    userId: 10,
+                    userName: "Alex",
+                    text: "lorem ipsum",
+                    rating: {
+                        likes: 10,
+                        dislikes: 2
+                    }
+                },
+                {
+                    userId: 5,
+                    userName: "Jane",
+                    text: "lorem ipsum 2",
+                    rating: {
+                        likes: 3,
+                        dislikes: 1
+                    }
+                },
+            ]
+        };
+        console.log(post.author, post.comments[0].rating.dislikes, post.comments[1].userId, post.comments[1].text);
+        const products1 = [
+            {
+                id: 3,
+                price: 200
+            },
+            {
+                id: 4,
+                price: 900
+            },
+            {
+                id: 1,
+                price: 1000
+            },
+        ]
+        products1.forEach(element => {
+            element.price = element.price * 85 / 100;
+            console.log(element.price);
+        });
+        const products2 = [
+            {
+                id: 3,
+                price: 127,
+                photos: [
+                    "1.jpg",
+                    "2.jpg"
+                ]
+            },
+            {
+                id: 5,
+                price: 499,
+                photos: []
+            },
+            {
+                id: 10,
+                price: 26,
+                photos: [
+                    "3.jpg"
+                ]
+            },
+            {
+                id: 8,
+                price: 78
+            }
+        ];
+        const productsPhotos = products2.filter(element => "photos" in element && element.photos.length > 0);
+        console.log(productsPhotos);
+        const productsSort = products2.sort(function (element1, element2) {
+            return element1.price - element2.price;
+        });
+        console.log(productsSort);
+        function task6() {
+            const rows = 20;
+            let slide = "";
+            for (let i = 0; i < rows; i++) {
+                slide = slide + "x";
+                console.log(slide);
+            }
+        }
+        task6();
+    </script>
+</body>
+
+</html>
