@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        'use strict';
+
+        /*function Product1(name, price) {
+            this.name = name;
+            this.price = price;
+        }
+
+        Product1.prototype.make25PercentDiscount = function () {
+            this.price = this.price * 0.75;
+        }
+
+        Product1.prototype.show = function () {
+            alert(this.name);
+            alert(this.price);
+        };
+
+        let product1 = new Product1('Car', 2500);
+        product1.make25PercentDiscount();
+        product1.show();
+
+        class Product2 {
+            constructor(name, price) {
+                this.name = name;
+                this.price = price;
+            }
+
+            make25PercentDiscount() {
+                this.price = this.price * 0.75;
+            }
+
+            show() {
+                alert(this.name);
+                alert(this.price);
+            }
+        }
+
+        let product2 = new Product2('Car', 2500);
+        product2.make25PercentDiscount();
+        product2.show();
+
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function (text) {
+            this.text = text;
+        }
+
+        Post.prototype.show = function () {
+            alert(this.author);
+            alert(this.text);
+            alert(this.date);
+        };
+
+        function AttachedPost(author, text, date, highlighted) {
+            Post.call(this, author, text, date);
+            this.highlighted = false;
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+
+        AttachedPost.prototype.highlighted = function () {
+            this.highlighted = true;
+        }
+
+        AttachedPost.prototype.show2 = function () {
+            alert(this.author);
+            alert(this.text);
+            alert(this.date);
+            alert(this.highlighted);
+        };
+
+        let post = new AttachedPost('human', 'text', 'monday', false);
+        post.show();
+        post.show2();*/
+
+        class Post {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+
+            edit(text) {
+                this.text = text;
+            }
+
+            show() {
+                alert(this.author);
+                alert(this.text);
+                alert(this.date);
+            }
+        }
+
+        class AttachedPost extends Post {
+            constructor(author, text, date, highlighted) {
+                super(author, text, date);
+                this.highlighted = false;
+            }
+
+            highlighted() {
+                this.highlighted = true;
+            }
+
+            show2() {
+                console.log(this.highlighted);
+            }
+        }
+
+        let bObj = new AttachedPost('текст1', 'текст2');
+        bObj.show();
+        bObj.show2();
+    </script>
+</body>
+
+</html>
